@@ -28,12 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
         </a>
         <div class="nav-links">
           <a href="/"><i class="fa fa-home fa-lg"></i></a>
-          <a href="/games"><i class="fa fa-gamepad fa-lg"></i></a>
-          <a href="/music"><i class="fa fa-music fa-lg"></i></a>
-          <a href="/tv"><i class="fa fa-television fa-lg"></i></a>
+          <a href="/tools"><i class="fa-solid fa-shapes fa-lg"></i></a>
+          <a href="/help"><i class="fa-solid fa-question fa-lg"></i></a>
+          <a href="/time"><i class="fa-solid fa-timer fa-lg"></i></a>
           <a href="/blog"><i class="fa fa-comment-alt fa-lg"></i></a>
           <a href="/settings"><i class="fa-solid fa-gear fa-lg"></i></a>
-          <a href="https://github.com/the-gameverse"><i class="fa-brands fa-square-github fa-lg"></i></a>
+          <a href="https://github.com/studyverse-site"><i class="fa-brands fa-square-github fa-lg"></i></a>
 
           <!-- Plus icon link to show extra links -->
           <a href="javascript:void(0);" class="plus-icon"><i class="fa fa-plus fa-lg"></i></a>
