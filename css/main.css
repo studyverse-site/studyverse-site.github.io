@@ -1,0 +1,147 @@
+/* Import fonts and icons */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css');
+
+/* Fix pushup footer issue */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  padding-bottom: 250px;
+}
+
+/* Background gradient */
+body {
+  background: linear-gradient(135deg, #222, #111);
+  background-attachment: fixed;
+  font-family: 'Caveat', cursive;
+  color: white;
+}
+
+/* Neon Glow Animation */
+@keyframes yellow-glow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.8);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 215, 0, 1), 0 0 30px rgba(255, 215, 0, 1), 0 0 40px rgba(255, 215, 0, 1);
+  }
+}
+
+/* Text styling */
+p {
+  font-size: 18px;
+  font-family: 'Caveat', cursive;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Bebas Neue', sans-serif;
+  color: white;
+  text-transform: uppercase;
+  animation: yellow-glow 1.5s infinite alternate;
+}
+
+h1 { font-size: 50px; }
+h2 { font-size: 40px; }
+h3 { font-size: 30px; }
+h4 { font-size: 20px; }
+
+/* Gradient Text with Neon Glow */
+.gradient-yellow {
+  background: linear-gradient(to right, #FFD700, #FFA500);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+  animation: yellow-glow 1.5s infinite alternate;
+  user-select: none;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+}
+
+button:hover {
+  background: #FFD700;
+  color: black;
+  border: 2px solid black;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 1);
+}
+
+/* Particles.JS */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Glowing Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFD700;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFA500;
+  box-shadow: 0 0 15px rgba(255, 165, 0, 1);
+}
+
+/* Links */
+a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #FFD700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+/* Glowing Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(34, 34, 34, 0.4);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+.footer-links a {
+  color: white;
+}
+
+.footer-links a:hover {
+  color: #FFD700;
+}
