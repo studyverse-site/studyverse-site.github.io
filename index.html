@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyVerse - Your Ultimate Study Hub</title>
+  <link rel="icon" type="image/x-icon" href="/uploads/branding/favicon.png">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: #001d3d;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+    }
+    @keyframes glow {
+      0%, 100% {
+        text-shadow: 0 0 10px rgba(38, 198, 218, 0.8), 0 0 20px rgba(38, 198, 218, 0.8);
+      }
+      50% {
+        text-shadow: 0 0 20px rgba(38, 198, 218, 1), 0 0 30px rgba(38, 198, 218, 1);
+      }
+    }
+    .gradient-blue {
+      background: linear-gradient(to right, #00bfff, #00d4ff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: glow 1.5s infinite alternate;
+    }
+    .content-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      margin: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(6px);
+      border-radius: 5px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .content-row.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar"></div>
+  <script src="/javascript/navbar.js"></script>
+  <br><br><br>
+  <center>
+    <img src="/uploads/branding/favicon.png" alt="StudyVerse Logo" height="150px" width="150px">
+    <h1 class="gradient-blue">StudyVerse</h1>
+    <hr>
+  </center>
+
+  <div class="content-row">
+    <div class="content-text">
+      <h3 class="gradient-blue">A COMPREHENSIVE STUDY HUB</h3>
+      <p>Explore an extensive collection of study tools, resources, and materials designed to enhance your learning experience.</p>
+    </div>
+    <img class="content-image" src="/uploads/images/studytools.png" alt="Study Tools Icon">
+  </div>
+  <hr>
+
+  <div class="content-row">
+    <div class="content-text">
+      <h3 class="gradient-blue">COLLABORATIVE LEARNING</h3>
+      <p>Engage with peers through our collaborative features, including study groups and discussion forums.</p>
+    </div>
+    <img class="content-image" src="/uploads/images/collaboration.png" alt="Collaborative Learning Icon">
+  </div>
+  <hr>
+
+  <div class="content-row">
+    <div class="content-text">
+      <h3 class="gradient-blue">MULTIMEDIA RESOURCES</h3>
+      <p>Access videos, articles, and interactive content that makes learning dynamic and engaging.</p>
+    </div>
+    <img class="content-image" src="/uploads/images/multimedia.png" alt="Multimedia Resources Icon">
+  </div>
+  <hr>
+
+  <div class="content-row">
+    <div class="content-text">
+      <h3 class="gradient-blue">PERSONALIZED LEARNING PATHS</h3>
+      <p>Customize your study journey with personalized learning paths and progress tracking to stay motivated.</p>
+    </div>
+    <img class="content-image" src="/uploads/images/personalizedlearning.png" alt="Personalized Learning Icon">
+  </div>
+  <hr>
+
+   <script>
+    const rows = document.querySelectorAll('.content-row');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.5 });
+    rows.forEach(row => observer.observe(row));
+  </script>
+
+    <!-- Particles.JS start -->
+    <div id="particles-js"></div>
+    <script src="/javascript/panic.js"></script>
+    <script src="/javascript/cloaking.js"></script>
+    <script src="/javascript/antitabclose.js"></script>
+    <script src="/javascript/particles.js"></script>
+    <script src="/javascript/particles-config.js"></script>
+    <!-- Particles.JS end -->
+    <script src="/javascript/scrollbar.js"></script>
+</body>
+</html>
