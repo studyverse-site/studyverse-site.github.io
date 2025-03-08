@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StudyVerse - Your Ultimate Study Hub</title>
+  <title>StudyVerse - Your Shortcut to Straight A’s.</title>
   <link rel="icon" type="image/x-icon" href="/uploads/branding/favicon.png">
   <link rel="stylesheet" href="/css/navbar.css">
   <link rel="stylesheet" href="/css/main.css">
@@ -12,20 +10,20 @@
       margin: 0;
       padding: 0;
       overflow-x: hidden;
-      background: #001d3d;
+      background: #000;
       font-family: Arial, sans-serif;
-      color: #ffffff;
+      color: #fff;
     }
     @keyframes glow {
       0%, 100% {
-        text-shadow: 0 0 10px rgba(38, 198, 218, 0.8), 0 0 20px rgba(38, 198, 218, 0.8);
+        text-shadow: 0 0 10px rgba(255, 223, 61, 0.8), 0 0 20px rgba(255, 223, 61, 0.8);
       }
       50% {
-        text-shadow: 0 0 20px rgba(38, 198, 218, 1), 0 0 30px rgba(38, 198, 218, 1);
+        text-shadow: 0 0 20px rgba(255, 223, 61, 1), 0 0 30px rgba(255, 223, 61, 1);
       }
     }
-    .gradient-blue {
-      background: linear-gradient(to right, #00bfff, #00d4ff);
+    .gradient-yellow {
+      background: linear-gradient(to right, #ffd700, #ffbf00);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
@@ -37,10 +35,10 @@
       justify-content: space-between;
       padding: 20px;
       margin: 20px;
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: rgba(34, 34, 34, 0.4);
       backdrop-filter: blur(6px);
       border-radius: 5px;
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+      box-shadow: 0 0 15px rgba(255, 223, 61, 0.3);
       opacity: 0;
       transform: translateY(50px);
       transition: opacity 0.8s ease, transform 0.8s ease;
@@ -57,47 +55,47 @@
   <br><br><br>
   <center>
     <img src="/uploads/branding/favicon.png" alt="StudyVerse Logo" height="150px" width="150px">
-    <h1 class="gradient-blue">StudyVerse</h1>
+    <h1 class="gradient-yellow">StudyVerse</h1>
     <hr>
   </center>
 
   <div class="content-row">
     <div class="content-text">
-      <h3 class="gradient-blue">A COMPREHENSIVE STUDY HUB</h3>
-      <p>Explore an extensive collection of study tools, resources, and materials designed to enhance your learning experience.</p>
+      <h3 class="gradient-yellow">LEARN WITHOUT LIMITS</h3>
+      <p>Access a vast collection of educational resources, tools, and study materials anytime, anywhere.</p>
     </div>
-    <img class="content-image" src="/uploads/images/studytools.png" alt="Study Tools Icon">
+    <img class="content-image" src="/uploads/images/learning.png" alt="Learning Icon">
   </div>
   <hr>
 
   <div class="content-row">
     <div class="content-text">
-      <h3 class="gradient-blue">COLLABORATIVE LEARNING</h3>
-      <p>Engage with peers through our collaborative features, including study groups and discussion forums.</p>
+      <h3 class="gradient-yellow">STAY FOCUSED & PRODUCTIVE</h3>
+      <p>Enhance your productivity with focus tools, note-taking features, and study planners.</p>
     </div>
-    <img class="content-image" src="/uploads/images/collaboration.png" alt="Collaborative Learning Icon">
+    <img class="content-image" src="/uploads/images/focus.png" alt="Focus Icon">
   </div>
   <hr>
 
   <div class="content-row">
     <div class="content-text">
-      <h3 class="gradient-blue">MULTIMEDIA RESOURCES</h3>
-      <p>Access videos, articles, and interactive content that makes learning dynamic and engaging.</p>
+      <h3 class="gradient-yellow">COMMUNITY & COLLABORATION</h3>
+      <p>Engage with like-minded learners, join study groups, and share knowledge seamlessly.</p>
     </div>
-    <img class="content-image" src="/uploads/images/multimedia.png" alt="Multimedia Resources Icon">
+    <img class="content-image" src="/uploads/images/community.png" alt="Community Icon">
   </div>
   <hr>
 
   <div class="content-row">
     <div class="content-text">
-      <h3 class="gradient-blue">PERSONALIZED LEARNING PATHS</h3>
-      <p>Customize your study journey with personalized learning paths and progress tracking to stay motivated.</p>
+      <h3 class="gradient-yellow">CUSTOMIZATION & UPDATES</h3>
+      <p>Personalize your learning experience with themes, customizable layouts, and regular updates.</p>
     </div>
-    <img class="content-image" src="/uploads/images/personalizedlearning.png" alt="Personalized Learning Icon">
+    <img class="content-image" src="/uploads/images/customization.png" alt="Customization Icon">
   </div>
   <hr>
 
-   <script>
+  <script>
     const rows = document.querySelectorAll('.content-row');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -111,9 +109,6 @@
 
     <!-- Particles.JS start -->
     <div id="particles-js"></div>
-    <script src="/javascript/panic.js"></script>
-    <script src="/javascript/cloaking.js"></script>
-    <script src="/javascript/antitabclose.js"></script>
     <script src="/javascript/particles.js"></script>
     <script src="/javascript/particles-config.js"></script>
     <!-- Particles.JS end -->
