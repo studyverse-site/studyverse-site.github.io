@@ -55,7 +55,7 @@ body {
   height: 50px;
   border-radius: 50%;
   text-decoration: none;
-  background: black;
+  background: #FFD700;
   transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
 }
@@ -69,7 +69,7 @@ body {
 
 /* Nav Icons - Set to Yellow */
 .nav-links a i {
-  color: #FFD700;
+  color: black;
   font-size: 1.5em;
   text-shadow: 0 0 5px rgba(255, 215, 0, 0.8);
   transition: transform 0.3s ease;
