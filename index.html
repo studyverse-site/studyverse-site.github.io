@@ -6,43 +6,69 @@
   <link rel="stylesheet" href="/css/navbar.css">
   <link rel="stylesheet" href="/css/main.css">
   <style>
-
-  /*  @keyframes glow {
-      0%, 100% {
-        text-shadow: 0 0 10px rgba(255, 223, 61, 0.8), 0 0 20px rgba(255, 223, 61, 0.8);
-      }
-      50% {
-        text-shadow: 0 0 20px rgba(255, 223, 61, 1), 0 0 30px rgba(255, 223, 61, 1);
-      }
-    }
-    .gradient-yellow {
-      background: linear-gradient(to right, #ffd700, #ffbf00);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      animation: glow 1.5s infinite alternate;
-    }*/
     .content-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px;
-      margin: 20px;
+      padding: 40px 20px;
+      margin: 40px 0;
       background-color: rgba(34, 34, 34, 0.4);
       backdrop-filter: blur(6px);
-      border-radius: 5px;
-      box-shadow: 0 0 15px rgba(255, 223, 61, 0.3);
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       opacity: 0;
       transform: translateY(50px);
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
+
     .content-row.visible {
       opacity: 1;
       transform: translateY(0);
     }
+
+    .content-text {
+      max-width: 50%;
+    }
+
+    .content-text h3 {
+      font-size: 1.8rem;
+      color: #FFD700; /* Solid yellow color */
+      margin-bottom: 15px;
+    }
+
+    .content-text p {
+      font-size: 1rem;
+      color: #f1f1f1;
+      line-height: 1.6;
+    }
+
+    .content-image {
+      max-width: 40%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .content-image:hover {
+      transform: scale(1.05);
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      margin: 40px 0;
+    }
+
+    center h1 {
+      font-size: 3rem;
+      color: #FFD700; /* Solid yellow color */
+      margin-top: 20px;
+    }
+
+    center img {
+      margin-bottom: 20px;
+    }
   </style>
 </head>
-
 
 <body>
   <div id="navbar"></div>
@@ -50,13 +76,13 @@
   <br><br><br>
   <center>
     <img src="/uploads/branding/favicon.png" alt="StudyVerse Logo" height="150px" width="150px">
-    <h1 class="gradient-yellow">StudyVerse</h1>
+    <h1>StudyVerse</h1>
     <hr>
   </center>
 
   <div class="content-row">
     <div class="content-text">
-      <h3 class="gradient-yellow">LEARN WITHOUT LIMITS</h3>
+      <h3>LEARN WITHOUT LIMITS</h3>
       <p>Access a vast collection of educational resources, tools, and study materials anytime, anywhere.</p>
     </div>
     <img class="content-image" src="/uploads/images/learning.png" alt="Learning Icon">
@@ -65,7 +91,7 @@
 
   <div class="content-row">
     <div class="content-text">
-      <h3 class="gradient-yellow">STAY FOCUSED & PRODUCTIVE</h3>
+      <h3>STAY FOCUSED & PRODUCTIVE</h3>
       <p>Enhance your productivity with focus tools, note-taking features, and study planners.</p>
     </div>
     <img class="content-image" src="/uploads/images/focus.png" alt="Focus Icon">
@@ -74,7 +100,7 @@
 
   <div class="content-row">
     <div class="content-text">
-      <h3 class="gradient-yellow">COMMUNITY & COLLABORATION</h3>
+      <h3>COMMUNITY & COLLABORATION</h3>
       <p>Engage with like-minded learners, join study groups, and share knowledge seamlessly.</p>
     </div>
     <img class="content-image" src="/uploads/images/community.png" alt="Community Icon">
@@ -83,7 +109,7 @@
 
   <div class="content-row">
     <div class="content-text">
-      <h3 class="gradient-yellow">CUSTOMIZATION & UPDATES</h3>
+      <h3>CUSTOMIZATION & UPDATES</h3>
       <p>Personalize your learning experience with themes, customizable layouts, and regular updates.</p>
     </div>
     <img class="content-image" src="/uploads/images/customization.png" alt="Customization Icon">
@@ -102,11 +128,11 @@
     rows.forEach(row => observer.observe(row));
   </script>
 
-    <!-- Particles.JS start -->
-    <div id="particles-js"></div>
-    <script src="/javascript/particles.js"></script>
-    <script src="/javascript/particles-config.js"></script>
-    <!-- Particles.JS end -->
-    <script src="/javascript/scrollbar.js"></script>
+  <!-- Particles.JS start -->
+  <div id="particles-js"></div>
+  <script src="/javascript/particles.js"></script>
+  <script src="/javascript/particles-config.js"></script>
+  <!-- Particles.JS end -->
+  <script src="/javascript/scrollbar.js"></script>
 </body>
 </html>
