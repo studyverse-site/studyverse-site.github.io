@@ -14,7 +14,7 @@ html, body {
 
 /* Background gradient */
 body {
-  background: linear-gradient(135deg, #222, #111);
+  background: white;
   background-attachment: fixed;
   font-family: 'Caveat', cursive;
   color: white;
