@@ -14,7 +14,7 @@ html, body {
 
 /* Background */
 body {
-  background: rgb(0, 0, 0); /* Set background to white */
+  background: rgb(37, 37, 37); /* Set background to white */
   background-attachment: fixed;
   font-family: 'Caveat', cursive;
   color: rgb(255, 255, 255);
