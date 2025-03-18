@@ -12,9 +12,9 @@ html, body {
   padding-bottom: 250px;
 }
 
-/* Background gradient */
+/* Background */
 body {
-  background: white;
+  background: white; /* Set background to white */
   background-attachment: fixed;
   font-family: 'Caveat', cursive;
   color: black;
@@ -38,9 +38,8 @@ p {
 
 h1, h2, h3, h4 {
   font-family: 'Bebas Neue', sans-serif;
-  color: white;
+  color: #FFD700; /* Solid yellow color */
   text-transform: uppercase;
-  animation: yellow-glow 1.5s infinite alternate;
 }
 
 h1 { font-size: 50px; }
@@ -48,14 +47,12 @@ h2 { font-size: 40px; }
 h3 { font-size: 30px; }
 h4 { font-size: 20px; }
 
-/* Gradient Text with Neon Glow */
+/* Gradient Text */
 .gradient-yellow {
   background: linear-gradient(to right, #FFD700, #FFA500);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
-  animation: yellow-glow 1.5s infinite alternate;
   user-select: none;
 }
 
@@ -69,7 +66,6 @@ button {
   cursor: pointer;
   margin: 10px;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
   font-family: 'Caveat', cursive;
   font-size: 20px;
 }
@@ -78,7 +74,6 @@ button:hover {
   background: #FFD700;
   color: black;
   border: 2px solid black;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 1);
 }
 
 /* Particles.JS */
@@ -91,7 +86,7 @@ button:hover {
   z-index: -1;
 }
 
-/* Glowing Scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -103,27 +98,24 @@ button:hover {
 ::-webkit-scrollbar-thumb {
   background: #FFD700;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #FFA500;
-  box-shadow: 0 0 15px rgba(255, 165, 0, 1);
 }
 
 /* Links */
 a {
-  color: white;
+  color: black; /* Adjusted to match the white background */
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
 
 a:hover {
   color: #FFD700;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
 }
 
-/* Glowing Footer */
+/* Footer */
 .footer {
   position: fixed;
   bottom: 0;
@@ -135,7 +127,6 @@ a:hover {
   text-align: center;
   z-index: 1000;
   backdrop-filter: blur(6px);
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
 }
 
 .footer-links a {
