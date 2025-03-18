@@ -14,10 +14,10 @@ html, body {
 
 /* Background */
 body {
-  background: white; /* Set background to white */
+  background: rgb(0, 0, 0); /* Set background to white */
   background-attachment: fixed;
   font-family: 'Caveat', cursive;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 /* Neon Glow Animation */
