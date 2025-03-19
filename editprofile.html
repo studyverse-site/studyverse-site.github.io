@@ -69,6 +69,11 @@
       margin-bottom: 10px;
     }
 
+    .profile-preview p {
+      color: black; /* Updated text color for readability */
+      font-size: 1rem;
+    }
+
     .profile-updated {
       animation: fadeOut 2s ease-in-out;
     }
@@ -170,8 +175,14 @@
           setTimeout(() => navbarProfile.classList.remove('profile-updated'), 2000);
         }
 
-        alert('Profile updated successfully!');
+         // Rerender the navbar to reflect changes
+         const navbar = document.getElementById('navbar');
+        navbar.innerHTML = ''; // Clear the existing navbar
+        const navbarScript = document.createElement('script');
+        navbarScript.src = '/javascript/navbar.js';
+        navbar.appendChild(navbarScript);
       }
+      
     });
   </script>
 </body>
