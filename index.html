@@ -5,10 +5,58 @@
   <link rel="icon" type="image/x-icon" href="/uploads/branding/favicon.png">
   <link rel="stylesheet" href="/css/navbar.css">
   <link rel="stylesheet" href="/css/main.css">
- <link rel="stylesheet" href="/css/home.css"
+  <link rel="stylesheet" href="/css/home.css">
+  <style>
+    /* Additional styles for carousel animations */
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      position: relative;
+      text-align: center;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: auto;
+    }
+
+    .carousel-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 5px;
+      max-width: 80%;
+    }
+
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .carousel-controls button {
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Navbar -->
   <div id="navbar"></div>
   <script src="/javascript/navbar.js"></script>
 
@@ -25,6 +73,7 @@
   <!-- Image Carousel Section -->
   <div class="carousel fade-in-delayed" id="carousel">
     <div class="carousel-inner">
+      <!-- First Slide -->
       <div class="carousel-slide">
         <img src="/uploads/images/resources.png" alt="Learning">
         <div class="carousel-text">
@@ -32,6 +81,7 @@
           <p>Access a vast collection of educational resources, tools, and study materials anytime, anywhere.</p>
         </div>
       </div>
+      <!-- Second Slide -->
       <div class="carousel-slide">
         <img src="/uploads/images/focus.jpg" alt="Focus">
         <div class="carousel-text">
@@ -39,20 +89,23 @@
           <p>Enhance your productivity with focus tools, note-taking features, and study planners.</p>
         </div>
       </div>
+      <!-- Third Slide -->
       <div class="carousel-slide">
-        <img src="/uploads/images/goals.png" alt="Community">
+        <img src="/uploads/images/goals.png" alt="Set Goals">
         <div class="carousel-text">
           <h3>Set Goals, And Track Them</h3>
           <p>No more uncompleted tasks and goals. Set them, and track them here.</p>
         </div>
       </div>
     </div>
+    <!-- Carousel Controls -->
     <div class="carousel-controls">
       <button id="prev">❮</button>
       <button id="next">❯</button>
     </div>
   </div>
 
+  <!-- JavaScript for Carousel -->
   <script>
     const carousel = document.querySelector('.carousel-inner');
     const slides = document.querySelectorAll('.carousel-slide');
@@ -76,6 +129,9 @@
     });
   </script>
 
+  <!-- Main JavaScript -->
   <script src="/javascript/main.js"></script>
+  <script src="/javascript/particles.js"></script>
+  <script src="/javascript/particles-config.js"></script>
 </body>
 </html>
