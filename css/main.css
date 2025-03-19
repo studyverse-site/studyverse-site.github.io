@@ -150,7 +150,7 @@ a:hover {
   z-index: 10000;
 }
 
-#terms-popup .popup-overlay {
+#terms-popup .terms-popup-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -160,7 +160,7 @@ a:hover {
   z-index: 1;
 }
 
-#terms-popup .popup-content {
+#terms-popup .terms-popup-content {
   position: relative;
   z-index: 2;
   background: rgba(34, 34, 34, 0.9); /* Dark background */
@@ -173,29 +173,36 @@ a:hover {
   font-family: 'Caveat', cursive;
 }
 
-#terms-popup .popup-content h2 {
+#terms-popup .terms-popup-content h2 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 2rem;
   color: #FFD700; /* Solid yellow color */
   margin-bottom: 15px;
 }
 
-#terms-popup .popup-content p {
+#terms-popup .terms-popup-content p {
   font-size: 1rem;
   line-height: 1.6;
   color: #f1f1f1;
 }
 
-#terms-popup .popup-content a {
+#terms-popup .terms-popup-content a {
   color: #FFD700;
   text-decoration: none;
 }
 
-#terms-popup .popup-content a:hover {
+#terms-popup .terms-popup-content a:hover {
   color: #FFA500;
 }
 
-#terms-popup .popup-content button {
+#terms-popup .terms-popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#terms-popup .terms-popup-buttons button {
   padding: 10px 20px;
   background: #FFD700;
   color: black;
@@ -203,10 +210,18 @@ a:hover {
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
-  margin-top: 20px;
   transition: background 0.3s ease;
 }
 
-#terms-popup .popup-content button:hover {
+#terms-popup .terms-popup-buttons button:hover {
   background: #FFA500;
+}
+
+#terms-popup .terms-popup-buttons #disagree-button {
+  background: #FF4C4C; /* Red for "I Don't Agree" */
+  color: white;
+}
+
+#terms-popup .terms-popup-buttons #disagree-button:hover {
+  background: #FF0000;
 }

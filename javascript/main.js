@@ -5,14 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const popup = document.createElement('div');
       popup.id = 'terms-popup';
       popup.innerHTML = `
-        <div class="popup-overlay"></div>
-        <div class="popup-content">
+        <div class="terms-popup-overlay"></div>
+        <div class="terms-popup-content">
           <h2>Terms and Conditions</h2>
           <p>
             By using this website, you agree to our <a href="/terms.html" target="_blank">Terms and Conditions</a> 
             and <a href="/privacy.html" target="_blank">Privacy Policy</a>.
           </p>
-          <div class="popup-buttons">
+          <div class="terms-popup-buttons">
             <button id="agree-button">I Agree</button>
             <button id="disagree-button">I Don't Agree</button>
           </div>
