@@ -175,14 +175,9 @@
           setTimeout(() => navbarProfile.classList.remove('profile-updated'), 2000);
         }
 
-         // Rerender the navbar to reflect changes
-         const navbar = document.getElementById('navbar');
-        navbar.innerHTML = ''; // Clear the existing navbar
-        const navbarScript = document.createElement('script');
-        navbarScript.src = '/javascript/navbar.js';
-        navbar.appendChild(navbarScript);
-      }
+        location.reload();
       
+      }
     });
   </script>
 </body>
