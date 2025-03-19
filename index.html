@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="/css/navbar.css">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/home.css">
-  <style>
+  <!--<style>
     /* Additional styles for carousel animations */
     .carousel-inner {
       display: flex;
@@ -52,7 +52,7 @@
       padding: 10px;
       cursor: pointer;
     }
-  </style>
+  </style>-->
 </head>
 
 <body>
@@ -127,6 +127,9 @@
       currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
       updateCarousel();
     });
+
+    // Initialize the carousel position
+    updateCarousel();
   </script>
 
   <!-- Main JavaScript -->
