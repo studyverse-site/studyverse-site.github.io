@@ -1,4 +1,6 @@
-
+body {
+    overflow-x: hidden;
+}
 /* Fade-in animation */
 @keyframes fadeIn {
   from {
