@@ -70,7 +70,7 @@
 
     .banner {
       position: relative;
-      background: url('/uploads/images/learning.jpg') no-repeat center center/cover;
+      background: url('/uploads/images/banner.jpg') no-repeat center center/cover;
       height: 400px;
       display: flex;
       align-items: center;
@@ -115,28 +115,39 @@
     }
 
     .carousel {
-      display: flex;
-      overflow: hidden;
       position: relative;
+      width: 100%;
+      overflow: hidden;
       margin: 40px 0;
     }
 
-    .carousel img {
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      position: relative;
+      text-align: center;
+    }
+
+    .carousel-slide img {
       width: 100%;
       height: auto;
-      flex-shrink: 0;
-      transition: transform 0.5s ease;
+      display: block;
     }
 
     .carousel-text {
       position: absolute;
       top: 50%;
-      left: 10%;
-      transform: translateY(-50%);
+      left: 50%;
+      transform: translate(-50%, -50%);
       color: white;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.6);
       padding: 20px;
       border-radius: 5px;
+      max-width: 80%;
     }
 
     .carousel-controls {
@@ -174,56 +185,56 @@
 
   <!-- Image Carousel Section -->
   <div class="carousel" id="carousel">
-    <div class="carousel-slide">
-      <img src="/uploads/images/resources.png" alt="Learning">
-      <div class="carousel-text">
-        <h3>Learn Without Limits</h3>
-        <p>Access a vast collection of educational resources, tools, and study materials anytime, anywhere.</p>
+    <div class="carousel-inner">
+      <div class="carousel-slide">
+        <img src="/uploads/images/resources.png" alt="Learning">
+        <div class="carousel-text">
+          <h3>Learn Without Limits</h3>
+          <p>Access a vast collection of educational resources, tools, and study materials anytime, anywhere.</p>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <img src="/uploads/images/focus.jpg" alt="Focus">
+        <div class="carousel-text">
+          <h3>Stay Focused & Productive</h3>
+          <p>Enhance your productivity with focus tools, note-taking features, and study planners.</p>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <img src="/uploads/images/goals.png" alt="Community">
+        <div class="carousel-text">
+          <h3>Set Goals, And Track Them</h3>
+          <p>No more uncompleted tasks and goals. Set them, and track them here.</p>
+        </div>
       </div>
     </div>
-    <div class="carousel-slide">
-      <img src="/uploads/images/focus.jpg" alt="Focus">
-      <div class="carousel-text">
-        <h3>Stay Focused & Productive</h3>
-        <p>Enhance your productivity with focus tools, note-taking features, and study planners.</p>
-      </div>
+    <div class="carousel-controls">
+      <button id="prev">❮</button>
+      <button id="next">❯</button>
     </div>
-    <div class="carousel-slide">
-      <img src="/uploads/images/goals.png" alt="Community">
-      <div class="carousel-text">
-        <h3>Set Goals, And Track Them</h3>
-        <p>No more uncompleted tasks, and goals. Set them, and track them here. </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Carousel Controls -->
-  <div class="carousel-controls">
-    <button id="prev">❮</button>
-    <button id="next">❯</button>
   </div>
 
   <script>
-    const carousel = document.getElementById('carousel');
-    const slides = carousel.querySelectorAll('.carousel-slide');
+    const carousel = document.querySelector('.carousel-inner');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
     let currentIndex = 0;
 
-    document.getElementById('prev').addEventListener('click', () => {
+    function updateCarousel() {
+      const offset = -currentIndex * 100;
+      carousel.style.transform = `translateX(${offset}%)`;
+    }
+
+    prevButton.addEventListener('click', () => {
       currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
       updateCarousel();
     });
 
-    document.getElementById('next').addEventListener('click', () => {
+    nextButton.addEventListener('click', () => {
       currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
       updateCarousel();
     });
-
-    function updateCarousel() {
-      const offset = -currentIndex * 100;
-      slides.forEach(slide => {
-        slide.style.transform = `translateX(${offset}%)`;
-      });
-    }
   </script>
 
   <script src="/javascript/scrollbar.js"></script>
