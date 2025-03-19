@@ -32,3 +32,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    if (Notification.permission === "default") {
+        document.getElementById('notification-popup').style.display = 'block';
+    }
+
+    document.getElementById('enable-notifications-btn').addEventListener('click', function() {
+        requestNotificationPermission();
+    });
+});
+
+function requestNotificationPermission() {
+    Notification.requestPermission().then(permission => {
+        if (permission === "granted") {
+            alert("Notifications enabled!");
+        } else {
+            alert("Notifications disabled!");
+        }
+        document.getElementById('notification-popup').style.display = 'none';
+    });
+}
+
+function sendNotification(title, options) {
+    if (Notification.permission === "granted") {
+        new Notification(title, options);
+    } else {
+        alert("Please enable notifications to receive updates.");
+    }
+}
+
+// Example usage
+// sendNotification("Hello!", { body: "This is a test notification." });
