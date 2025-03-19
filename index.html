@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>StudyVerse - Your Shortcut to Straight A’s.</title>
+  <title>StudyVerse - Your Shortcut to Straight A’s</title>
   <link rel="icon" type="image/x-icon" href="/uploads/branding/favicon.png">
   <link rel="stylesheet" href="/css/navbar.css">
   <link rel="stylesheet" href="/css/main.css">
@@ -67,72 +67,165 @@
     center img {
       margin-bottom: 20px;
     }
+
+    .banner {
+      position: relative;
+      background: url('/uploads/images/banner.jpg') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .banner-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+      z-index: 1;
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .banner-content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .banner-content p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .banner-content button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background: #FFD700;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .carousel {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      margin: 40px 0;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: auto;
+      flex-shrink: 0;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-text {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%);
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .carousel-controls button {
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
   </style>
 </head>
 
 <body>
   <div id="navbar"></div>
   <script src="/javascript/navbar.js"></script>
-  <br><br><br>
-  <center>
-    <img src="/uploads/branding/favicon.png" alt="StudyVerse Logo" height="150px" width="150px">
-    <h1>StudyVerse</h1>
-    <hr>
-  </center>
 
-  <div class="content-row">
-    <div class="content-text">
-      <h3>LEARN WITHOUT LIMITS</h3>
-      <p>Access a vast collection of educational resources, tools, and study materials anytime, anywhere.</p>
+  <!-- Banner Section -->
+  <div class="banner">
+    <div class="banner-overlay"></div>
+    <div class="banner-content">
+      <h1>Welcome to StudyVerse</h1>
+      <p>Your Shortcut to Straight A’s</p>
+      <button>Get Started</button>
     </div>
-    <img class="content-image" src="/uploads/images/learning.png" alt="Learning Icon">
   </div>
-  <hr>
 
-  <div class="content-row">
-    <div class="content-text">
-      <h3>STAY FOCUSED & PRODUCTIVE</h3>
-      <p>Enhance your productivity with focus tools, note-taking features, and study planners.</p>
+  <!-- Image Carousel Section -->
+  <div class="carousel" id="carousel">
+    <div class="carousel-slide">
+      <img src="/uploads/images/learning.png" alt="Learning">
+      <div class="carousel-text">
+        <h3>Learn Without Limits</h3>
+        <p>Access a vast collection of educational resources, tools, and study materials anytime, anywhere.</p>
+      </div>
     </div>
-    <img class="content-image" src="/uploads/images/focus.png" alt="Focus Icon">
+    <div class="carousel-slide">
+      <img src="/uploads/images/focus.png" alt="Focus">
+      <div class="carousel-text">
+        <h3>Stay Focused & Productive</h3>
+        <p>Enhance your productivity with focus tools, note-taking features, and study planners.</p>
+      </div>
+    </div>
+    <div class="carousel-slide">
+      <img src="/uploads/images/community.png" alt="Community">
+      <div class="carousel-text">
+        <h3>Community & Collaboration</h3>
+        <p>Engage with like-minded learners, join study groups, and share knowledge seamlessly.</p>
+      </div>
+    </div>
   </div>
-  <hr>
 
-  <div class="content-row">
-    <div class="content-text">
-      <h3>COMMUNITY & COLLABORATION</h3>
-      <p>Engage with like-minded learners, join study groups, and share knowledge seamlessly.</p>
-    </div>
-    <img class="content-image" src="/uploads/images/community.png" alt="Community Icon">
+  <!-- Carousel Controls -->
+  <div class="carousel-controls">
+    <button id="prev">❮</button>
+    <button id="next">❯</button>
   </div>
-  <hr>
-
-  <div class="content-row">
-    <div class="content-text">
-      <h3>CUSTOMIZATION & UPDATES</h3>
-      <p>Personalize your learning experience with themes, customizable layouts, and regular updates.</p>
-    </div>
-    <img class="content-image" src="/uploads/images/customization.png" alt="Customization Icon">
-  </div>
-  <hr>
 
   <script>
-    const rows = document.querySelectorAll('.content-row');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+    const carousel = document.getElementById('carousel');
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    let currentIndex = 0;
+
+    document.getElementById('prev').addEventListener('click', () => {
+      currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+      updateCarousel();
+    });
+
+    document.getElementById('next').addEventListener('click', () => {
+      currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+      updateCarousel();
+    });
+
+    function updateCarousel() {
+      const offset = -currentIndex * 100;
+      slides.forEach(slide => {
+        slide.style.transform = `translateX(${offset}%)`;
       });
-    }, { threshold: 0.5 });
-    rows.forEach(row => observer.observe(row));
+    }
   </script>
 
-  <!-- Particles.JS start -->
-  <div id="particles-js"></div>
-  <script src="/javascript/particles.js"></script>
-  <script src="/javascript/particles-config.js"></script>
-  <!-- Particles.JS end -->
   <script src="/javascript/scrollbar.js"></script>
 </body>
 </html>
