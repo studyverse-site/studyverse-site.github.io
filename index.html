@@ -77,6 +77,12 @@
       justify-content: center;
       text-align: center;
       color: white;
+      overflow: hidden;
+    }
+
+    .banner:hover {
+      transform: scale(1.1);
+      transition: transform 0.5s ease;
     }
 
     .banner-overlay {
@@ -137,6 +143,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    .carousel-slide:hover {
+      transform: scale(1.05);
     }
 
     .carousel-slide img {
@@ -245,6 +256,6 @@
     });
   </script>
 
-  <script src="/javascript/scrollbar.js"></script>
+  <script src="/javascript/main.js"></script>
 </body>
 </html>
