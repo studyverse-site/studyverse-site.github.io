@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Profile - StudyVerse</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <style>
+    /* Profile Editor Styles */
+    .profile-editor {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-editor h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .profile-editor label {
+      display: block;
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    .profile-editor input[type="text"],
+    .profile-editor input[type="url"],
+    .profile-editor input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .profile-editor button {
+      width: 100%;
+      padding: 10px;
+      font-size: 1.2rem;
+      background: #FFD700;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .profile-editor button:hover {
+      background: #FFA500;
+    }
+
+    .profile-preview {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .profile-preview img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .profile-updated {
+      animation: fadeOut 2s ease-in-out;
+    }
+
+    @keyframes fadeOut {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div id="navbar"></div>
+  <script src="/javascript/navbar.js"></script>
+
+  <!-- Profile Editor Section -->
+  <div class="profile-editor">
+    <h2>Edit Your Profile</h2>
+    <form id="profile-form">
+      <label for="username">Name</label>
+      <input type="text" id="username" placeholder="Enter your name" value="Guest">
+
+      <label for="profile-url">Profile Image URL</label>
+      <input type="url" id="profile-url" placeholder="Enter image URL">
+
+      <label for="profile-file">Or Upload Profile Image</label>
+      <input type="file" id="profile-file" accept="image/*">
+
+      <button type="button" id="save-profile">Save</button>
+    </form>
+
+    <div class="profile-preview">
+      <h3>Preview</h3>
+      <img id="preview-image" src="/uploads/branding/favicon.png" alt="Profile Preview">
+      <p id="preview-name">Guest</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const profileForm = document.getElementById('profile-form');
+      const usernameInput = document.getElementById('username');
+      const profileUrlInput = document.getElementById('profile-url');
+      const profileFileInput = document.getElementById('profile-file');
+      const saveButton = document.getElementById('save-profile');
+      const previewImage = document.getElementById('preview-image');
+      const previewName = document.getElementById('preview-name');
+
+      // Load existing profile data from localStorage
+      const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser')) || {
+        username: 'Guest',
+        photo: '/uploads/branding/favicon.png',
+      };
+
+      // Populate the form with existing data
+      usernameInput.value = loggedInUser.username;
+      previewName.textContent = loggedInUser.username;
+      previewImage.src = loggedInUser.photo;
+
+      // Handle Save Button Click
+      saveButton.addEventListener('click', () => {
+        const newUsername = usernameInput.value.trim();
+        let newPhoto = profileUrlInput.value.trim();
+
+        // If a file is uploaded, use it as the new photo
+        if (profileFileInput.files.length > 0) {
+          const file = profileFileInput.files[0];
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            newPhoto = e.target.result;
+            updateProfile(newUsername, newPhoto);
+          };
+          reader.readAsDataURL(file);
+        } else {
+          // Use the URL or keep the existing photo
+          newPhoto = newPhoto || loggedInUser.photo;
+          updateProfile(newUsername, newPhoto);
+        }
+      });
+
+      // Update Profile Function
+      function updateProfile(name, photo) {
+        // Save the updated profile to localStorage
+        const updatedUser = { username: name, photo: photo };
+        localStorage.setItem('loggedInUser', JSON.stringify(updatedUser));
+
+        // Update the preview
+        previewName.textContent = name;
+        previewImage.src = photo;
+
+        // Animate the profile in the navbar
+        const navbarProfile = document.querySelector('.profile-link');
+        if (navbarProfile) {
+          navbarProfile.classList.add('profile-updated');
+          setTimeout(() => navbarProfile.classList.remove('profile-updated'), 2000);
+        }
+
+        alert('Profile updated successfully!');
+      }
+    });
+  </script>
+</body>
+</html>
