@@ -6,53 +6,52 @@
   <link rel="stylesheet" href="/css/navbar.css">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/home.css">
-  <!--<style>
-    /* Additional styles for carousel animations */
-    .carousel-inner {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
+  <style>
+    /* Styles for the arrows and text */
+    .arrow-container {
+      position: absolute;
+      z-index: 1000;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 0.5s ease-in-out;
     }
 
-    .carousel-slide {
-      min-width: 100%;
-      position: relative;
+    .arrow {
+      width: 50px;
+      height: 50px;
+      background: url('/uploads/images/arrow.png') no-repeat center center;
+      background-size: contain;
+    }
+
+    .arrow-text {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #333;
       text-align: center;
-    }
-
-    .carousel-slide img {
-      width: 100%;
-      height: auto;
-    }
-
-    .carousel-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 20px;
+      background: #fff;
+      padding: 5px 10px;
       border-radius: 5px;
-      max-width: 80%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .carousel-controls {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
+    .arrow-left {
+      transform: rotate(90deg);
     }
 
-    .carousel-controls button {
-      background: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
+    .arrow-right {
+      transform: rotate(-90deg);
     }
-  </style>-->
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -66,7 +65,7 @@
     <div class="banner-content">
       <h1>Welcome to StudyVerse</h1>
       <p>Your Shortcut to Straight A’s</p>
-      <button>Get Started</button>
+      <button id="get-started">Get Started</button>
     </div>
   </div>
 
@@ -105,6 +104,17 @@
     </div>
   </div>
 
+  <!-- Arrows and Text -->
+  <div id="arrow-to-links" class="arrow-container" style="top: 80px; left: 20px;">
+    <div class="arrow arrow-left"></div>
+    <div class="arrow-text">To get started, just click any of the links</div>
+  </div>
+
+  <div id="arrow-to-profile" class="arrow-container" style="top: 80px; right: 20px;">
+    <div class="arrow arrow-right"></div>
+    <div class="arrow-text">Or create a profile now</div>
+  </div>
+
   <!-- JavaScript for Carousel -->
   <script>
     const carousel = document.querySelector('.carousel-inner');
@@ -130,6 +140,27 @@
 
     // Initialize the carousel position
     updateCarousel();
+  </script>
+
+  <!-- JavaScript for Get Started -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const getStartedButton = document.getElementById('get-started');
+      const arrowToLinks = document.getElementById('arrow-to-links');
+      const arrowToProfile = document.getElementById('arrow-to-profile');
+
+      getStartedButton.addEventListener('click', () => {
+        // Show the arrows and text
+        arrowToLinks.style.display = 'flex';
+        arrowToProfile.style.display = 'flex';
+
+        // Hide the arrows after 5 seconds
+        setTimeout(() => {
+          arrowToLinks.style.display = 'none';
+          arrowToProfile.style.display = 'none';
+        }, 5000);
+      });
+    });
   </script>
 
   <!-- Main JavaScript -->
