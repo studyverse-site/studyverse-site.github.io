@@ -119,22 +119,30 @@
       width: 100%;
       overflow: hidden;
       margin: 40px 0;
+      display: flex;
+      justify-content: center;
     }
 
     .carousel-inner {
       display: flex;
       transition: transform 0.5s ease-in-out;
+      justify-content: center;
+      align-items: center;
     }
 
     .carousel-slide {
       min-width: 100%;
       position: relative;
       text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .carousel-slide img {
-      width: 100%;
-      height: auto;
+      width: 1000px;
+      height: 1000px;
+      object-fit: cover;
       display: block;
     }
 
