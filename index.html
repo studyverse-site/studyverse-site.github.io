@@ -1,165 +1,200 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>StudyVerse - Your Shortcut to Straight A’s</title>
-  <link rel="icon" type="image/x-icon" href="/uploads/branding/favicon.png">
-  <link rel="stylesheet" href="/css/navbar.css">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/home.css">
-  <style>
-    /* Styles for the arrows and text */
-    .arrow-container {
-      position: absolute;
-      z-index: 1000;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      animation: fadeIn 0.5s ease-in-out;
-    }
-
-    .arrow {
-      width: 50px;
-      height: 50px;
-      background: url('/uploads/images/arrow.png') no-repeat center center;
-      background-size: contain;
-    }
-
-    .arrow-text {
-      margin-top: 10px;
-      font-size: 1rem;
-      color: #333;
-      text-align: center;
-      background: #fff;
-      padding: 5px 10px;
-      border-radius: 5px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
+  <head>
+    <title>StudyVerse - Your Shortcut to Straight A’s</title>
+    <link rel="icon" type="image/x-icon" href="/uploads/branding/favicon.png" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <style>
+      /* Styles for the arrows and text */
+      .arrow-container {
+        position: absolute;
+        z-index: 1000;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        animation: fadeIn 0.5s ease-in-out;
       }
-      to {
-        opacity: 1;
+
+      .arrow {
+        width: 50px;
+        height: 50px;
+        background: url("/uploads/images/arrow.png") no-repeat center center;
+        background-size: contain;
       }
-    }
-  </style>
-</head>
 
-<body>
-  <!-- Navbar -->
-  <div id="navbar"></div>
-  <script src="/javascript/navbar.js"></script>
+      .arrow-text {
+        margin-top: 10px;
+        font-size: 1rem;
+        color: #333;
+        text-align: center;
+        background: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
 
-  <!-- Banner Section -->
-  <div class="banner fade-in">
-    <div class="banner-overlay"></div>
-    <div class="banner-content">
-      <h1>Welcome to StudyVerse</h1>
-      <p>Your Shortcut to Straight A’s</p>
-      <button id="get-started">Get Started</button>
-    </div>
-  </div>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
 
-  <!-- Image Carousel Section -->
-  <div class="carousel fade-in-delayed" id="carousel">
-    <div class="carousel-inner">
-      <!-- First Slide -->
-      <div class="carousel-slide">
-        <img src="/uploads/images/resources.png" alt="Learning">
-        <div class="carousel-text">
-          <h3>Learn Without Limits</h3>
-          <p>Access a vast collection of educational resources, tools, and study materials anytime, anywhere.</p>
-        </div>
-      </div>
-      <!-- Second Slide -->
-      <div class="carousel-slide">
-        <img src="/uploads/images/focus.jpg" alt="Focus">
-        <div class="carousel-text">
-          <h3>Stay Focused & Productive</h3>
-          <p>Enhance your productivity with focus tools, note-taking features, and study planners.</p>
-        </div>
-      </div>
-      <!-- Third Slide -->
-      <div class="carousel-slide">
-        <img src="/uploads/images/goals.png" alt="Set Goals">
-        <div class="carousel-text">
-          <h3>Set Goals, And Track Them</h3>
-          <p>No more uncompleted tasks and goals. Set them, and track them here.</p>
-        </div>
+  <body>
+    <!-- Navbar -->
+    <div id="navbar"></div>
+    <script src="/javascript/navbar.js"></script>
+
+    <!-- Banner Section -->
+    <div class="banner fade-in">
+      <div class="banner-overlay"></div>
+      <div class="banner-content">
+        <h1>Welcome to StudyVerse</h1>
+        <p>Your Shortcut to Straight A’s</p>
+        <button id="get-started">Get Started</button>
       </div>
     </div>
-    <!-- Carousel Controls -->
-    <div class="carousel-controls">
-      <button id="prev">❮</button>
-      <button id="next">❯</button>
+
+    <!-- Image Carousel Section -->
+    <div class="carousel fade-in-delayed" id="carousel">
+      <div class="carousel-inner">
+        <!-- First Slide -->
+        <div class="carousel-slide">
+          <img src="/uploads/images/resources.png" alt="Learning" />
+          <div class="carousel-text">
+            <h3>Learn Without Limits</h3>
+            <p>
+              Access a vast collection of educational resources, tools, and
+              study materials anytime, anywhere.
+            </p>
+          </div>
+        </div>
+        <!-- Second Slide -->
+        <div class="carousel-slide">
+          <img src="/uploads/images/focus.jpg" alt="Focus" />
+          <div class="carousel-text">
+            <h3>Stay Focused & Productive</h3>
+            <p>
+              Enhance your productivity with focus tools, note-taking features,
+              and study planners.
+            </p>
+          </div>
+        </div>
+        <!-- Third Slide -->
+        <div class="carousel-slide">
+          <img src="/uploads/images/goals.png" alt="Set Goals" />
+          <div class="carousel-text">
+            <h3>Set Goals, And Track Them</h3>
+            <p>
+              No more uncompleted tasks and goals. Set them, and track them
+              here.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Carousel Controls -->
+      <div class="carousel-controls">
+        <button id="prev">❮</button>
+        <button id="next">❯</button>
+      </div>
     </div>
-  </div>
 
-  <!-- Arrows and Text -->
-  <div id="arrow-to-links" class="arrow-container" style="top: 80px; left: 20px;">
-    <div class="arrow arrow-left"></div>
-    <div class="arrow-text">To get started, just click any of the links</div>
-  </div>
+    <!-- Arrows and Text -->
+    <div
+      id="arrow-to-links"
+      class="arrow-container"
+      style="top: 80px; left: 20px"
+    >
+      <div class="arrow arrow-left"></div>
+      <div class="arrow-text">To get started, just click any of the links</div>
+    </div>
 
-  <div id="arrow-to-profile" class="arrow-container" style="top: 80px; right: 20px;">
-    <div class="arrow arrow-right"></div>
-    <div class="arrow-text">Or create a profile now</div>
-  </div>
+    <div
+      id="arrow-to-profile"
+      class="arrow-container"
+      style="top: 80px; right: 20px"
+    >
+      <div class="arrow arrow-right"></div>
+      <div class="arrow-text">Or create a profile now</div>
+    </div>
 
-  <!-- JavaScript for Carousel -->
-  <script>
-    const carousel = document.querySelector('.carousel-inner');
-    const slides = document.querySelectorAll('.carousel-slide');
-    const prevButton = document.getElementById('prev');
-    const nextButton = document.getElementById('next');
-    let currentIndex = 0;
+    <div class="footer">
+      <div class="footer-content">
+        <div class="footer-left">
+          <h4><a href="/reviews">Leave a review!</a></h4>
+          <h4><a href="/contact">Contact Us!</a></h4>
+          <h4><a href="/share">Share the Page!</a></h4>
+        </div>
+        <div class="footer-right">
+          <h3>Subjects:</h3>
+          <h4><a href="/mathtools">Math Tools</a></h4>
+          <h4><a href="/sciencetools">Science Tools</a></h4>
+          <h4><a href="/englishtools">English Tools</a></h4>
+          <h3>Other:</h3>
+          <h4><a href="/blog">Blog</a></h4>
+          <h4><a href="https://github.com/studyverse-site">Github Page</a></h4>
+          <h4><a href="/settings">Settings</a></h4>
+        </div>
+      </div>
+    </div>
 
-    function updateCarousel() {
-      const offset = -currentIndex * 100;
-      carousel.style.transform = `translateX(${offset}%)`;
-    }
+    <!-- JavaScript for Carousel -->
+    <script>
+      const carousel = document.querySelector(".carousel-inner");
+      const slides = document.querySelectorAll(".carousel-slide");
+      const prevButton = document.getElementById("prev");
+      const nextButton = document.getElementById("next");
+      let currentIndex = 0;
 
-    prevButton.addEventListener('click', () => {
-      currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
-      updateCarousel();
-    });
+      function updateCarousel() {
+        const offset = -currentIndex * 100;
+        carousel.style.transform = `translateX(${offset}%)`;
+      }
 
-    nextButton.addEventListener('click', () => {
-      currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
-      updateCarousel();
-    });
-
-    // Initialize the carousel position
-    updateCarousel();
-  </script>
-
-  <!-- JavaScript for Get Started -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const getStartedButton = document.getElementById('get-started');
-      const arrowToLinks = document.getElementById('arrow-to-links');
-      const arrowToProfile = document.getElementById('arrow-to-profile');
-
-      getStartedButton.addEventListener('click', () => {
-        // Show the arrows and text
-        arrowToLinks.style.display = 'flex';
-        arrowToProfile.style.display = 'flex';
-
-        // Hide the arrows after 5 seconds
-        setTimeout(() => {
-          arrowToLinks.style.display = 'none';
-          arrowToProfile.style.display = 'none';
-        }, 10000);
+      prevButton.addEventListener("click", () => {
+        currentIndex = currentIndex > 0 ? currentIndex - 1 : slides.length - 1;
+        updateCarousel();
       });
-    });
-  </script>
 
-  <!-- Main JavaScript -->
-  <script src="/javascript/main.js"></script>
-  <script src="/javascript/particles.js"></script>
-  <script src="/javascript/particles-config.js"></script>
-</body>
+      nextButton.addEventListener("click", () => {
+        currentIndex = currentIndex < slides.length - 1 ? currentIndex + 1 : 0;
+        updateCarousel();
+      });
+
+      // Initialize the carousel position
+      updateCarousel();
+    </script>
+
+    <!-- JavaScript for Get Started -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const getStartedButton = document.getElementById("get-started");
+        const arrowToLinks = document.getElementById("arrow-to-links");
+        const arrowToProfile = document.getElementById("arrow-to-profile");
+
+        getStartedButton.addEventListener("click", () => {
+          // Show the arrows and text
+          arrowToLinks.style.display = "flex";
+          arrowToProfile.style.display = "flex";
+
+          // Hide the arrows after 5 seconds
+          setTimeout(() => {
+            arrowToLinks.style.display = "none";
+            arrowToProfile.style.display = "none";
+          }, 10000);
+        });
+      });
+    </script>
+
+    <!-- Main JavaScript -->
+    <script src="/javascript/main.js"></script>
+    <script src="/javascript/particles.js"></script>
+    <script src="/javascript/particles-config.js"></script>
+  </body>
 </html>

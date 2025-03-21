@@ -13,6 +13,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  text-align: center;
   align-items: center;
   padding: 10px 20px;
   box-sizing: border-box;
@@ -22,7 +23,7 @@ body {
 }
 
 /* Navbar Background with Blur */
-.nav-left-bg, .nav-right-bg {
+.nav-right-bg, .nav-center-bg {
   background-color: rgba(34, 34, 34, 0.5);
   backdrop-filter: blur(6px);
   padding: 5px 15px;
@@ -31,6 +32,14 @@ body {
   align-items: center;
   gap: 10px;
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+.nav-right-bg {
+  text-align: right;
+}
+
+.nav-left-bg {
+  height: min-content;
+  margin-left: 1.5rem;
 }
 
 /* Logo */
@@ -100,17 +109,27 @@ body {
 
 /* Footer */
 .footer {
+  display: flex;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(34, 34, 34, 0.4);
+  background-color: rgba(40, 40, 40, 0.4);
   color: white;
-  padding: 20px 0;
+  margin: 0;
   text-align: center;
+  align-items: center;
+  justify-content: center;
   z-index: 1000;
   backdrop-filter: blur(6px);
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+  border-top: 1px solid #FFC400;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 0 20px;
+  max-width: 50%;
 }
 
 .footer-links a {
@@ -121,6 +140,20 @@ body {
 
 .footer-links a:hover {
   color: #FFD700;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-right: 25%;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  margin-left: 25%;
 }
 
 /* Toggle Footer Button */

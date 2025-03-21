@@ -106,7 +106,7 @@ button:hover {
 
 /* Links */
 a {
-  color: black; /* Adjusted to match the white background */
+  color: yellow; /* Adjusted to match the white background */
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
@@ -117,7 +117,7 @@ a:hover {
 
 /* Footer */
 .footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
   left: 0;
   width: 100%;
